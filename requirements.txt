@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+google-cloud-bigquery
+google-cloud-bigquery[pandas]
+db-dtypes
+pandas
+python-multipart

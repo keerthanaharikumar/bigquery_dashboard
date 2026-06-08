@@ -3,6 +3,8 @@ from google.cloud import bigquery
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 import pandas as pd
+import os
+
 
 app=FastAPI(
     title="GA4 Analytics API",
@@ -18,6 +20,7 @@ app.add_middleware(
 )
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
+PROJECT_ID = os.getenv("GCP_PROJECT_ID", "pythonbigq")
 client=bigquery.Client(project='pythonbigq')
 
 

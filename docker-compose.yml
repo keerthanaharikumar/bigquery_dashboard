@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - GCP_PROJECT_ID=pythonbigq
+      - GOOGLE_APPLICATION_CREDENTIALS=/credentials/key.json
+    volumes:
+      - ./credentials.json:/credentials/key.json:ro
